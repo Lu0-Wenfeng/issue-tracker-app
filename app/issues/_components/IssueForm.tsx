@@ -37,8 +37,8 @@ const IssueForm = ({ issue }: { issue?: Issue }) => {
       setIsSubmitting(true);
       if (issue) await axios.patch("/api/issues/" + issue.id, data);
       else await axios.post("/api/issues", data);
-      await axios.post("/api/issues", data);
       router.push("/issues");
+      router.refresh();
     } catch (error) {
       setIsSubmitting(false);
       setError("A generic error has occurred. Please try again later.");
