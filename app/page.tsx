@@ -5,6 +5,7 @@ import IssueChart from "./IssueChart";
 import LatestIssue from "./LatestIssue";
 import IssueSummary from "./issueSummary";
 
+// test
 export default async function Home() {
   const open = await prisma.issue.count({ where: { status: "OPEN" } });
   const inProgress = await prisma.issue.count({
